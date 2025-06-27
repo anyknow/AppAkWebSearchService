@@ -9,6 +9,8 @@ from lagent.llms import (
     LMDeployServer,
 )
 
+load_dotenv()
+
 internlm_server = dict(
     type=LMDeployServer,
     path="internlm/internlm2_5-7b-chat",
@@ -55,7 +57,7 @@ gpt4 = dict(
                             "https://api.openai.com/v1/chat/completions"),
 )
 
-url = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+url = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 qwen = dict(
     type=GPTAPI,
     model_type="qwen-max-longcontext",
